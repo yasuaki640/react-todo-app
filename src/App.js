@@ -21,6 +21,15 @@ export default function App() {
         setIncompleteTodos(newTodos);
     };
 
+    const onClickComplete = (index) => {
+        const newInCompleteTodos = [...incompleteTodos];
+        newInCompleteTodos.splice(index, 1);
+
+        const newCompleteTodos = [...completeTodos, incompleteTodos[index]];
+        setIncompleteTodos(newInCompleteTodos);
+        setCompleteTodos(newCompleteTodos);
+    };
+
     return (
         <>
             <div className={"input-area"}>
@@ -34,7 +43,7 @@ export default function App() {
                         return (
                             <div key={todo} className={"list-row"}>
                                 <li>{todo}</li>
-                                <button>complete</button>
+                                <button onClick={() => onClickComplete(index)}>complete</button>
                                 <button onClick={() => onClickDelete(index)}>delete</button>
                             </div>
                         );
