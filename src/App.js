@@ -4,11 +4,11 @@ import "./styles.css";
 export default function App() {
     return (
         <>
-            <div>
+            <div className={"input-area"}>
                 <input placeholder={"input TODO"}/>
                 <button>add</button>
             </div>
-            <div>
+            <div className={"incomplete-area"}>
                 <p>UNDONE</p>
                 <ul>
                     <div>
@@ -23,7 +23,7 @@ export default function App() {
                     </div>
                 </ul>
             </div>
-            <div>
+            <div className={"complete-area"}>
                 <p>DONE</p>
                 <ul>
                     <div>
