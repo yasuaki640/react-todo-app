@@ -30,6 +30,15 @@ export default function App() {
         setCompleteTodos(newCompleteTodos);
     };
 
+    const onClickReturn = (index) => {
+        const newCompleteTodos = [...completeTodos];
+        newCompleteTodos.splice(index, 1);
+
+        const newIncompleteTodos = [...incompleteTodos, completeTodos[index]];
+        setCompleteTodos(newCompleteTodos);
+        setIncompleteTodos(newIncompleteTodos);
+    };
+
     return (
         <>
             <div className={"input-area"}>
@@ -53,11 +62,14 @@ export default function App() {
             <div className={"complete-area"}>
                 <p className={"title"}>DONE</p>
                 <ul>
-                    {completeTodos.map(todo => {
+                    {completeTodos.map((todo, index) => {
                         return (
                             <div key={todo} className={"list-row"}>
                                 <li>{todo}</li>
-                                <button>return</button>
+                                <button onClick={() => {
+                                    onClickReturn(index)
+                                }}>return
+                                </button>
                             </div>
                         );
                     })}
