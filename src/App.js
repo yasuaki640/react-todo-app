@@ -9,14 +9,14 @@ export default function App() {
                 <button>add</button>
             </div>
             <div className={"incomplete-area"}>
-                <p>UNDONE</p>
+                <p className={"title"}>UNDONE</p>
                 <ul>
-                    <div>
+                    <div className={"list-row"}>
                         <li>三の倍数だけ</li>
                         <button>complete</button>
                         <button>delete</button>
                     </div>
-                    <div>
+                    <div className={"list-row"}>
                         <li>三の倍数だけ</li>
                         <button>complete</button>
                         <button>delete</button>
@@ -24,13 +24,13 @@ export default function App() {
                 </ul>
             </div>
             <div className={"complete-area"}>
-                <p>DONE</p>
+                <p className={"title"}>DONE</p>
                 <ul>
-                    <div>
+                    <div className={"list-row"}>
                         <li>あほになる</li>
                         <button>return</button>
                     </div>
-                    <div>
+                    <div className={"list-row"}>
                         <li>あほになる</li>
                         <button>return</button>
                     </div>
