@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import "./styles.css";
+import {InputTodo} from "./components/InputTodo";
 
 export default function App() {
     const [todoText, setTodoText] = useState('');
@@ -41,10 +42,7 @@ export default function App() {
 
     return (
         <>
-            <div className={"input-area"}>
-                <input placeholder={"input TODO"} value={todoText} onChange={onChangeTodoText}/>
-                <button onClick={onClickAdd}>add</button>
-            </div>
+            <InputTodo todoText={todoText} onChangeTodoText={onChangeTodoText} onClickAdd={onClickAdd}/>
             <div className={"incomplete-area"}>
                 <p className={"title"}>UNDONE</p>
                 <ul>
