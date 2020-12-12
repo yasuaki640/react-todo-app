@@ -44,7 +44,9 @@ export default function App() {
 
     return (
         <>
-            <InputTodo todoText={todoText} onChangeTodoText={onChangeTodoText} onClickAdd={onClickAdd}/>
+            <InputTodo todoText={todoText} onChangeTodoText={onChangeTodoText} onClickAdd={onClickAdd}
+                       disabled={incompleteTodos.length >= 5}/>
+            {incompleteTodos.length >= 5 && <p style={{color: "red"}}>登録できるtodoは5個までです。</p>}
             <IncompleteTodos todos={incompleteTodos} onClickDelete={onClickDelete} onClickComplete={onClickComplete}/>
             <CompleteTodos todos={completeTodos} onClickReturn={onClickReturn}/>
         </>
