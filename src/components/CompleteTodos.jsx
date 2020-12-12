@@ -1,9 +1,18 @@
 import React from "react";
 
-export const CompleteTodos = (props)=>{
+const style = {
+    backgroundColor: "#ffffe0",
+    width: "400px",
+    minHeight: "200px",
+    padding: "8px",
+    margin: "8px",
+    borderRadius: "8px",
+};
+
+export const CompleteTodos = (props) => {
     const {todos, onClickReturn} = props;
     return (
-        <div className={"complete-area"}>
+        <div style={style} className={"complete-area"}>
             <p className={"title"}>DONE</p>
             <ul>
                 {todos.map((todo, index) => {
